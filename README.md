@@ -3,7 +3,7 @@ Here is the implementation of almost (excluding the ones returns iterable) every
 #### Note: This is just representation of the capabilities of the reduce method. In most cases built in methods are much optimized and performed. 
 ---
 #### Array.prototype.at()
-````
+```javascript
 Array.prototype.customAt  =  function (index) {
 	if (index  <  0) index  =  this.length  +  index;
 	if (index  >  this.length) return  undefined;
@@ -12,10 +12,10 @@ Array.prototype.customAt  =  function (index) {
 		return  acc;
 	}, undefined);
 };
-````
+```
 ---
 #### Array.prototype.concat()
-````
+```javascript
 Array.prototype.customConcat  =  function (...args) {
 	return [...args].reduce((acc, cur) =>  {
 		if (Array.isArray(cur)) {
@@ -25,10 +25,10 @@ Array.prototype.customConcat  =  function (...args) {
 		return  acc;
 	}, this);
 };
-````
+```
 ---
 #### Array.prototype.copyWithin()
-````
+```javascript
 Array.prototype.customCopyWithin  =  function (target, start, end  =  this.length) {
 	let  count  =  0;
 	target  =  target  <  0  ?  this.length  +  target  :  target;
@@ -44,20 +44,20 @@ Array.prototype.customCopyWithin  =  function (target, start, end  =  this.lengt
 		return  acc;
 	}, []);
 };
-````
+```
 ---
 #### Array.prototype.every()
-````
+```javascript
 Array.prototype.customEvery  =  function (callback) {
 	return  this.reduce((acc, cur) =>  {
 		if (!callback(cur)) return  false;
 		return  acc;
 	}, true);
 };
-````
+```
 ---
 #### Array.prototype.fill()
-````
+```javascript
 Array.prototype.customFill  =  function (value, start, end  =  this.length) {
 	start  =  start  <  0  ?  this.length  +  start  :  start;
 	end  =  end  <  0  ?  this.length  +  end  :  end;
@@ -69,10 +69,10 @@ Array.prototype.customFill  =  function (value, start, end  =  this.length) {
 	acc.push(cur);
 	return  acc;
 }, []);
-````
+```
 ---
 #### Array.prototype.filter()
-````
+```javascript
 Array.prototype.customFilter  =  function (callback) {
 	return  this.reduce((acc, cur) =>  {
 		if (callback(cur)) {
@@ -81,10 +81,10 @@ Array.prototype.customFilter  =  function (callback) {
 	return  acc;
 	}, []);
 };
-````
+```
 ---
 #### Array.prototype.find()
-````
+```javascript
 Array.prototype.customFind  =  function (callback) {
 	return  this.reduce((acc, cur) =>  {
 		if (acc  ===  undefined  &&  callback(cur)) {
@@ -93,20 +93,20 @@ Array.prototype.customFind  =  function (callback) {
 	return  acc;
 	}, undefined);
 };
-````
+```
 ---
 #### Array.prototype.findIndex()
-````
+```javascript
 Array.prototype.customFindIndex  =  function (callback) {
 	return  this.reduce((acc, cur, index) =>  {
 		if (acc  ===  -1  &&  callback(cur)) return  index;
 			return  acc;
 	}, -1);
 };
-````
+```
 ---
 #### Array.prototype.findLast()
-````
+```javascript
 Array.prototype.customFindLast  =  function (callback) {
 	return  this.reduce((acc, cur) =>  {
 		if (callback(cur)) {
@@ -115,10 +115,10 @@ Array.prototype.customFindLast  =  function (callback) {
 	return  acc;
 	}, -1);
 };
-````
+```
 ---
 #### Array.prototype.flat()
-````
+```javascript
 Array.prototype.customFlat  =  function (depth) {
 	return  this.reduce((acc, cur, index) =>  {
 		if (Array.isArray(cur) &&  depth  >  0) {
@@ -130,10 +130,10 @@ Array.prototype.customFlat  =  function (depth) {
 	return  acc;
 	}, []);
 };
-````
+```
 ---
 #### Array.prototype.flat()
-````
+```javascript
 Array.prototype.customFlat  =  function (depth) {
 	return  this.reduce((acc, cur, index) =>  {
 		if (Array.isArray(cur) &&  depth  >  0) {
@@ -145,5 +145,11 @@ Array.prototype.customFlat  =  function (depth) {
 	return  acc;
 	}, []);
 };
-````
+```
 ---
+
+
+
+
+
+
